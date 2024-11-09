@@ -1,6 +1,7 @@
 from typing import List
 from Errors import InsufficientFundsError
 from Transaction import Transaction
+from Portfolio import Portfolio
 
 class User:
     def __init__(self, username, password, purchasingPower=0.00,transactions=None, portfolio=None):
