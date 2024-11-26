@@ -11,13 +11,17 @@ class Portfolio:
         self.__net_value += number
 
     # Getters
-    def display_net(self) -> int:
+    def get_net(self) -> int:
         return self.__net_value
+    
+    def get_portfolio(self):
+        return {"Net Balance": self.get_net(),
+                "Owned Stocks": self.get_owned_stock()}
     
     def get_owned_stock(self) -> dict:
         return self.__owned_stock
     
-    def add_stock(self, stock: Stock, shares: int):
+    def add_stock(self, stock: Stock, shares: float):
         ticker = stock.get_ticker()
         owned_stock = self.get_owned_stock()
 
@@ -28,7 +32,7 @@ class Portfolio:
 
         self.__set_net_value(stock.get_price() * shares)
 
-    def remove_stock(self, stock: Stock, shares: int):
+    def remove_stock(self, stock: Stock, shares: float):
         ticker = stock.get_ticker()
         owned_stock = self.get_owned_stock()
 
@@ -45,6 +49,5 @@ class Portfolio:
             raise InsufficientFundsError(f"Insufficient number of shares.")
 
 test = Portfolio()
-test.add_stock(Stock("Test", 20), 10)
-print(test.display_net())
-print(test.get_owned_stock())
+test.add_stock(Stock("Testing", 99), 5.5)
+print(test.get_portfolio())
