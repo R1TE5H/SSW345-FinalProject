@@ -47,7 +47,3 @@ class Portfolio:
 
         else:
             raise InsufficientFundsError(f"Insufficient number of shares.")
-
-test = Portfolio()
-test.add_stock(Stock("Testing", 99), 5.5)
-print(test.get_portfolio())
