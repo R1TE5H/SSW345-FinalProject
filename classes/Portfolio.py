@@ -21,7 +21,7 @@ class Portfolio:
     def get_owned_stock(self) -> dict:
         return self.__owned_stock
     
-    def add_stock(self, stock: Stock, shares: float):
+    def add_stock(self, stock: Stock, shares: float) -> None:
         ticker = stock.get_ticker()
         owned_stock = self.get_owned_stock()
 
@@ -32,7 +32,7 @@ class Portfolio:
 
         self.__set_net_value(stock.get_price() * shares)
 
-    def remove_stock(self, stock: Stock, shares: float):
+    def remove_stock(self, stock: Stock, shares: float) -> None:
         ticker = stock.get_ticker()
         owned_stock = self.get_owned_stock()
 
