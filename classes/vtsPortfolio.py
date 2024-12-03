@@ -1,5 +1,5 @@
-from Stock import Stock
-from Errors import InsufficientFundsError
+from vtsStock import Stock
+from vtsErrors import InsufficientFundsError
 
 class Portfolio:
     def __init__(self):

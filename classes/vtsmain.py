@@ -1,8 +1,8 @@
-from Transaction import Transaction
-from Portfolio import Portfolio
-from Stock import Stock
-from User import User
-from Errors import ImproperCredentialsError
+from vtsTransaction import Transaction
+from vtsPortfolio import Portfolio
+from vtsStock import Stock
+from vtsUser import User
+from vtsErrors import ImproperCredentialsError
 
 class main:
     print("Welcome to the Virtual Stock Trading Simulator. Please enter your account credentials.")

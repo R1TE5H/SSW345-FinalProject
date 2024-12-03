@@ -1,8 +1,8 @@
 from typing import List
-from Errors import InsufficientFundsError
-from Transaction import Transaction
-from Portfolio import Portfolio
-from Stock import Stock
+from vtsErrors import InsufficientFundsError
+from vtsTransaction import Transaction
+from vtsPortfolio import Portfolio
+from vtsStock import Stock
 
 class User:
     def __init__(self, username, password):

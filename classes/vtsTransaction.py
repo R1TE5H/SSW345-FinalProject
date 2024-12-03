@@ -1,6 +1,6 @@
 from typing import TypedDict
 from datetime import datetime 
-from Stock import Stock
+from vtsStock import Stock
 
 class TransactionDetails(TypedDict):
     stock: Stock
