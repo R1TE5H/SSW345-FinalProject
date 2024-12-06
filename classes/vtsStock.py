@@ -1,5 +1,5 @@
 class Stock:
-    def __init__(self, ticker, current_price):
+    def __init__(self, ticker: str, current_price: float):
         self.__ticker = ticker
         self.__current_price = current_price # Need to either set the price manually or get the price from an API call
 

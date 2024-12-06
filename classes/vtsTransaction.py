@@ -15,6 +15,7 @@ class Transaction:
         self.__transaction_type = transaction_type
         self.__time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+
     def get_details(self) -> TransactionDetails:
         return {
             "stock": self.__stock,
@@ -22,3 +23,6 @@ class Transaction:
             "transaction_type": self.__transaction_type,
             "time": self.__time
         }
+    
+    def __str__(self) -> str:
+        return f"{self.__transaction_type} {self.__shares} shares of {self.__stock.get_ticker()} at ${self.__stock.get_price()} each"

@@ -47,6 +47,9 @@ class User:
     def get_transactions(self) -> List[Transaction]:
         return self.__transactions 
     #  Need to figure out a way to properly print the transactions list
+    def print_transactions(self) -> List[Transaction]:
+        for transaction in self.get_transactions():
+            print(transaction)
 
 # Portfolio Manipulation 
     def get_portfolio(self) -> Portfolio:
