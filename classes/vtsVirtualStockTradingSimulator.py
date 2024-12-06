@@ -22,6 +22,16 @@ class VirtualStockTradingSimulator:
         self.set_purchasing_power()
 
         print(f"Your current purchasing power is ${self.user.purchasing_power:.2f}")
+    
+        self.stock1 = Stock(ticker="AAPL",current_price=150)
+        self.stock2 = Stock(ticker="GOOG", current_price=2800)
+
+        #Add test transactions
+        self.user.buy_stock(self.stock1, 10) #Buy 10 shares of AAPL
+        self.user.sell_stock(self.stock1, 5) #Sell 5 shares of AAPL
+        self.user.buy_stock(self.stock2, 2) #Buy 2 shares of GOOG
+
+        self.user.print_transactions() #Displays previous transactions
 
     def set_purchasing_power(self):
         while True:
