@@ -17,6 +17,7 @@ class VirtualStockTradingSimulator:
             raise ImproperCredentialsError(f"Password cannot be empty. Please provide valid credentials.")
         
         self.user = User(username, password)
+        self.portfolio = Portfolio()
         print(f"Welcome, {username}!")
 
         self.set_purchasing_power()
@@ -32,6 +33,13 @@ class VirtualStockTradingSimulator:
         self.user.buy_stock(self.stock2, 2) #Buy 2 shares of GOOG
 
         self.user.print_transactions() #Displays previous transactions
+
+        port_v = input("Would you like to view your portfolio? (Y/N): ")
+        if port_v == "Y":
+            self.user.print_portfolio()
+            print("Thank you for using the Virtual Stock Trading Simulator. Have a nice day!")
+        elif port_v == "N":
+            print("Thank you for using the Virtual Stock Trading Simulator. Have a nice day!")
 
     def set_purchasing_power(self):
         while True:

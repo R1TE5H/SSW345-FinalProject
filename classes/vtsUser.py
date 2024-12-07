@@ -63,6 +63,9 @@ class User:
         self.__portfolio.remove_stock(stock, shares)
         self.add_transaction(stock, "Sell", shares)
 
+    def print_portfolio(self) -> Portfolio:
+        print(self.__portfolio)
+
 
 # test = User("Testing", "test")
 # print(test.get_username())

@@ -7,11 +7,11 @@ class Portfolio:
         self.__owned_stock = {}
 
     # Setters
-    def __set_net_value(self, number: int):
+    def __set_net_value(self, number: float):
         self.__net_value += number
 
     # Getters
-    def get_net(self) -> int:
+    def get_net(self) -> float:
         return self.__net_value
     
     def get_portfolio(self):
@@ -25,7 +25,7 @@ class Portfolio:
         ticker = stock.get_ticker()
         owned_stock = self.get_owned_stock()
 
-        if stock.get_ticker() in owned_stock:
+        if ticker in owned_stock:
             self.__owned_stock[ticker] += shares
         else:
             self.__owned_stock[ticker] = shares
@@ -47,3 +47,6 @@ class Portfolio:
 
         else:
             raise InsufficientFundsError(f"Insufficient number of shares.")
+        
+    def __str__(self) -> str:
+        return f"{self.get_portfolio()}"
